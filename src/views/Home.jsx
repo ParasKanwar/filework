@@ -335,7 +335,7 @@ const PepLister = ({ pepsData }) => {
             {currentPepsData.length === 0 && <h1>No data to display</h1>}
             {currentPepsData.slice(perPage * currentIndex, perPage * (currentIndex + 1)).map((pepData) => (
               <Grid key={pepData.index} item xs={12 / itemsPerCol}>
-                <PepCard pepData={pepData} onStatusChange={jobStatusChange} fileIndex={pepData.index} />
+                <PepCard ref={ref} pepData={pepData} onStatusChange={jobStatusChange} fileIndex={pepData.index} />
               </Grid>
             ))}
           </Grid>
