@@ -7,8 +7,8 @@ import Pagination from "@mui/material/Pagination";
 import { utils, writeFile } from "xlsx";
 import axios from "axios";
 
-const PepCard = ({ pepData, onStatusChange, fileIndex }) => {
-  const [status, setStatus] = React.useState("");
+const PepCard = ({ pepData, onStatusChange, fileIndex, ref }) => {
+  const [status, setStatus] = React.useState(ref.current[fileIndex] || "");
   React.useEffect(() => {
     if (status !== "") {
       onStatusChange(status, fileIndex);
