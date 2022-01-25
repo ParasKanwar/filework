@@ -7,8 +7,8 @@ import Pagination from "@mui/material/Pagination";
 import { utils, writeFile } from "xlsx";
 import axios from "axios";
 
-const PepCard = ({ pepData, onStatusChange, fileIndex, ref }) => {
-  const [status, setStatus] = React.useState(ref.current[fileIndex] || "");
+const PepCard = ({ pepData, onStatusChange, fileIndex, someRef }) => {
+  const [status, setStatus] = React.useState(someRef.current[fileIndex] || "");
   React.useEffect(() => {
     if (status !== "") {
       onStatusChange(status, fileIndex);
@@ -335,7 +335,7 @@ const PepLister = ({ pepsData }) => {
             {currentPepsData.length === 0 && <h1>No data to display</h1>}
             {currentPepsData.slice(perPage * currentIndex, perPage * (currentIndex + 1)).map((pepData) => (
               <Grid key={pepData.index} item xs={12 / itemsPerCol}>
-                <PepCard ref={ref} pepData={pepData} onStatusChange={jobStatusChange} fileIndex={pepData.index} />
+                <PepCard someRef = {ref} pepData={pepData} onStatusChange={jobStatusChange} fileIndex={pepData.index} />
               </Grid>
             ))}
           </Grid>
