@@ -53,7 +53,7 @@ const PepCard = ({ pepData, onStatusChange, fileIndex, someRef }) => {
         <Grid item container justifyContent="center" justifyItems="center" alignItems="center" xs={5}>
           <ButtonBase
             onClick={() => {
-              const url = pepData.p1.Image_Url?.[0];
+              const url = pepData.p2.Image_Url?.[0];
               if (url) {
                 window.open(url, "_blank");
               }
