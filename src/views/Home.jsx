@@ -168,9 +168,9 @@ const idToDelete = (data) => {
     }
   } else {
     if ((data.p1.Position_Description?.length || 0) > (data.p2.Position_Description?.length || 0)) {
-      return data["Id 1"];
-    } else {
       return data["Id 2"];
+    } else {
+      return data["Id 1"];
     }
   }
   return undefined;
